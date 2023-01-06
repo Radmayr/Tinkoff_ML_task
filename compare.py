@@ -1,5 +1,14 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[61]:
+
+
 from Levenshtein import *
 import tkinter as tk
+
+
+# In[62]:
 
 
 def result():
@@ -11,11 +20,25 @@ def result():
         win_res.title('Результаты')
         label = tk.Label(win_res, text='Результаты')
         label.pack()
-        with open('results.txt', 'w', encoding='utf8') as f:
-            for i in result:
-                f.write(i + '\n')
-                label = tk.Label(win_res, text=i)
-                label.pack()
+        for i in result:
+            label = tk.Label(win_res, text=i)
+            label.pack()
+        
+        def saving():
+            saving_path = path_save.get()
+            with open(saving_path, 'w', encoding='utf8') as f:
+                for i in result:
+                    f.write(i + '\n')
+            label = tk.Label(win_res, text=f'Результат сохранен в {saving_path}')
+            label.pack()   
+            
+        label = tk.Label(win_res, text='Сохранить в')
+        label.pack()
+        path_save = tk.Entry(win_res)
+        path_save.pack()
+        tk.Button(win_res, text='Сохранить', command=saving).pack()
+        
+               
     except: 
         win_res = tk.Tk()
         win_res.title('Результаты')
@@ -26,6 +49,10 @@ def result():
 def delete_entry():
     path.delete(0, 'end')
     
+
+
+# In[63]:
+
 
 win = tk.Tk()
 win.title('Сравнение скриптов python')
@@ -38,6 +65,9 @@ tk.Button(win, text='Сравнить', command=result).grid(row=0, column=2)
 tk.Button(win, text='Удалить', command=delete_entry).grid(row=1, column=1)
 
 win.mainloop()
+
+
+# In[ ]:
 
 
 
