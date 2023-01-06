@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[61]:
-
-
 from Levenshtein import *
 import tkinter as tk
-
-
-# In[62]:
-
 
 def result():
     value = path.get()
@@ -49,9 +39,6 @@ def result():
 def delete_entry():
     path.delete(0, 'end')
     
-
-
-# In[63]:
 
 
 win = tk.Tk()
