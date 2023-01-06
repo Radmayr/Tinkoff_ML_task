@@ -1,0 +1,7 @@
+files\apply_lambda.py plagiat1\apply_lambda.py 
+files\arima.py plagiat1\apply_lambda.py 
+files\assembling_pipelines.py plagiat1\assembling_pipelines.py 
+files\binseg.py plagiat1\binseg.py 
+files\cifar.py plagiat1\cifar.py 
+files\binseg.py plagiat2\binseg.py
+files\apply_lambda.py plagiat2\apply_lambda.py
